@@ -1,7 +1,7 @@
 {
   "name": "@hitbit/expo-svg-transformer",
   "description": "Use svgr to reactify .svg files",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "author": "Emiliano Bovetti",
   "license": "GPL-3.0",
   "homepage": "https://github.com/hitbit-app/expo-svg-transformer#readme",
@@ -20,7 +20,8 @@
     "@svgr/plugin-svgo": "^4.3.1"
   },
   "peerDependencies": {
-    "react-native": "https://github.com/expo/react-native/archive/sdk-35.0.0.tar.gz",
+    "@babel/core": "^7.0.0",
+    "metro-react-native-babel-transformer": "^0.51.0",
     "react-native-svg": "~9.9.2"
   },
   "devDependencies": {}
