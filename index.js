@@ -25,3 +25,7 @@ module.exports.transform = function(file) {
 
   return metroTransformer.transform(file);
 };
+
+module.exports.default = function(input) {
+  return svgr(input, svgrConfig);
+};

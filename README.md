@@ -1,6 +1,6 @@
 ```bash
 expo install react-native-svg
-yarn add --dev @hitbit/expo-svg-transformer
+yarn add --dev @hitbit/expo-svg-transformer @expo/webpack-config
 ```
 
 ### app.json
@@ -31,6 +31,29 @@ module.exports = (async () => {
     },
   };
 })();
+```
+
+### webpack.config.js
+
+```javascript
+const createExpoWebpackConfigAsync = require('@expo/webpack-config');
+
+const svgRule = {
+  test: /\.svg$/,
+  exclude: /node_modules/,
+  use: [
+    'babel-loader',
+    '@hitbit/expo-svg-transformer',
+  ],
+};
+
+module.exports = async (env, argv) => {
+  const expoWebpackConfig = await createExpoWebpackConfigAsync(env, argv);
+
+  expoWebpackConfig.module.rules[1].oneOf.unshift(svgRule);
+
+  return expoWebpackConfig;
+};
 ```
 
 ### App.js
