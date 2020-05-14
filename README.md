@@ -71,3 +71,8 @@ export default function App() {
   );
 }
 ```
+
+## Without Expo
+
+1. `yarn add react-native-svg && yarn add --dev @hitbit/expo-svg-transformer`
+2. Use the same `metro.config.js`
