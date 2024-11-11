@@ -1,5 +1,5 @@
 const { default: svgr } = require('@svgr/core');
-const metroTransformer = require('metro-react-native-babel-transformer');
+const metroTransformer = require('@react-native/metro-babel-transformer');
 
 const svgoConfig = {
   plugins: [
